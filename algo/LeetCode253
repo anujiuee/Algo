@@ -1,0 +1,31 @@
+class Solution {
+    public int minMeetingRooms(int[][] intervals) {
+        int n = intervals.length;
+        int a[]= new int [n];
+        int b[]= new int [n];
+
+        for (int i=0;i<n;i++){
+            a[i]=intervals[i][0];
+            b[i]=intervals[i][1];
+        }
+
+        int ans = 0;
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        int i=0;
+        int j=0;
+        int k=0;
+
+        while(i<n && j<n){
+            if(a[i]>=b[j]) {k--;j++;}
+            else {k++;i++;}
+            ans = Math.max(ans,k);
+        }
+
+
+
+        return ans;
+    }
+}
