@@ -6,4 +6,5 @@ public class ParkingSpot {
     Vehicle vehicle;
     SpotType spotType;
     boolean isSpotOccupied=false;
+    //Int spotNumber
 }
